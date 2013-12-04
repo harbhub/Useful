@@ -13,7 +13,7 @@ if (typeof process == 'object') console.log('Node');
 Useful.AddElementToTop = function (el, par) {
 	//el = the element to add
 	//par = the parent element that the el is added to
-	if (par.firstChild) {par.insertBefore(el, par.firstChild);};
+	if (par.firstChild) {par.insertBefore(el, par.firstChild);}
 	else {par.appendChild(el);};
 }
 
