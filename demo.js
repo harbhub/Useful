@@ -1,5 +1,5 @@
 'use strict';
-
+console.log('demo.js');
 //Create List Container
 var obj = {
 	tag: 'ul',
