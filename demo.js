@@ -2,8 +2,7 @@
 console.log('demo.js Window Loading');
 window.onload = function () {
 	console.log('demo.js Window Loaded');
-	
-	var Useful = window.Useful;
+
 	//Create List Container
 	var obj = {
 		tag: 'ul',
@@ -25,7 +24,7 @@ window.onload = function () {
 		},
 		innerHTML: 'Hello'
 	};
-	var item = Useul.NewElement(obj_item);
+	var item = Useful.NewElement(obj_item);
 	Useful.AddElementToTop(el, document.getElementById('demo_list'));
 
 };
