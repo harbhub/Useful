@@ -1,7 +1,7 @@
 'use strict';
 //var Useful = (typeof Useful == 'object') ? Useful : {};
 var Useful = {};
-console.log('Useful.js by Michael T. Harbach, BSCE (Open source code available at URL: https://github.com/harbhub/Useful');
+console.log('Useful.js by Michael T. Harbach, BSCE Open source code available at URL: https://github.com/harbhub/Useful');
 if (typeof window == 'object') console.log('Browser');
 if (typeof process == 'object') console.log('Node');
 
