@@ -24,9 +24,7 @@ window.onload = function () {
 		},
 		innerHTML: 'Hello'
 	};
-	var item = Useful.NewElement(obj_item);
-	console.log(el);
-	console.log(document.getElementById('demo_list'));
+	var el = Useful.NewElement(obj_item);
 	Useful.AddElementToTop(el, document.getElementById('demo_list'));
 
 };
