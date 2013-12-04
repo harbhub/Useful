@@ -6,4 +6,4 @@ Code that is generally useful
 Demo
 ====
 
-* [Demo] (harbhub.githubio.com/Useful)
+[Demo] (http://harbhub.githubio.com/Useful)
