@@ -14,6 +14,102 @@
   
 </body>
 
+<script>
+  window.onload = function () {
 
+    //Canvas with appropriate width, height, and background image
+    var img = document.getElementById('bg_img1');
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    
+    canvas.width = img.width;
+    canvas.height = img.height;
+    
+    ctx.drawImage(img, 0, 0);
+
+    //Draggable images with canvas listening for image drop
+    var selected_imgs = {
+        'drag_img1': false,
+        'drag_img2': false,
+        'drag_img3': false
+    };
+    var selected_img_id;
+    var drag_img1 = document.getElementById('drag_img1');
+    var drag_img2 = document.getElementById('drag_img2');
+    var drag_img3 = document.getElementById('drag_img3');
+    
+    drag_img1.addEventListener('click', function (e) {
+        if (selected_imgs.drag_img1 === true) {return;};
+        drag_img2.style.border = 'none';
+        drag_img3.style.border = 'none';
+        drag_img1.style.border = '1px solid black';
+        selected_img_id = "drag_img1";
+    });
+    drag_img2.addEventListener('click', function (e) {
+        if (selected_imgs.drag_img2 === true) {return;};
+        drag_img1.style.border = 'none';
+        drag_img3.style.border = 'none';
+        drag_img2.style.border = '1px solid black';
+        selected_img_id = "drag_img2";
+    });
+    drag_img3.addEventListener('click', function (e) {
+        if (selected_imgs.drag_img3 === true) {return;};
+        drag_img1.style.border = 'none';
+        drag_img2.style.border = 'none';
+        drag_img3.style.border = '1px solid black';
+        selected_img_id = "drag_img3";
+    });
+    
+    canvas.addEventListener('click', function (e) {
+        if (typeof selected_img_id !== 'string') {return;}
+        if (selected_imgs[selected_img_id] === true) {return;}
+        var img_to_add = document.getElementById(selected_img_id);
+        var x = e.pageX - (img_to_add.width / 2) - canvas.offsetLeft;
+        var y = e.pageY - (img_to_add.height / 2) - canvas.offsetTop;
+        //console.log(x + ' ' + y);
+        ctx.drawImage(img_to_add, x, y);
+        selected_imgs[selected_img_id] = true;
+        //img_to_add.style.border = 'dotted';
+        img_to_add.style.opacity = '.4';
+        img_to_add.style.border = 'none';
+        if (selected_imgs.drag_img1 && selected_imgs.drag_img2 && selected_imgs.drag_img3) {
+            document.getElementById('save_button').style.visibility = 'visible';
+            document.getElementById('save_button').disabled = false;
+        };
+    });
+    
+    document.getElementById('clear_button').addEventListener('click', function (e) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0);
+        drag_img1.style.border = 'none';
+        drag_img2.style.border = 'none';
+        drag_img3.style.border = 'none';
+        drag_img1.style.opacity = '1';
+        drag_img2.style.opacity = '1';
+        drag_img3.style.opacity = '1';
+        document.getElementById('save_button').style.visibility = 'hidden';
+        document.getElementById('save_button').disabled = true;
+        selected_imgs.drag_img1 = false;
+        selected_imgs.drag_img2 = false;
+        selected_imgs.drag_img3 = false;
+    });
+    
+    document.getElementById('save_button').addEventListener('click', function (e) {
+        //var dataURL = canvas.toDataURL();
+/*        canvas.toBlob(function (blob) {
+            console.log('blobb');
+            saveAs(blob, 'name_of_file.png');
+        });*/
+        var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+        window.location.href = image;
+    });
+    
+    setTimeout(function () {
+        //document.getElementById('save_button').style.visibility = 'visible';
+        //document.getElementById('save_button').disabled = false;
+    }, 3000);
+    
+};
+</script>
 
 </html>
