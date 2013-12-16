@@ -5,6 +5,8 @@
   <title>Useful</title>
   <script src='http://rawgithub.com/harbhub/Useful/master/Useful.js'></script>
   <script src='http://rawgithub.com/harbhub/Useful/master/demo.js'></script>
+  <script src="http://harbhub.github.io/Useful/javascripts/FileSaver.js"></script>
+  <script src="http://harbhub.github.io/Useful/javascripts/CanvasToBlob.js"></script>
 </head>
 
 <body>
@@ -21,7 +23,6 @@
   <canvas id='canvas' ></canvas>
       
   <div>
-  
       <img crossorigin="anonymous" id="drag_img1" draggable="true" src="http://harbhub.github.io/Useful/images/mail_pink.png" >
       <img crossorigin="anonymous" id="drag_img2" draggable="true" src="http://harbhub.github.io/Useful/images/mail_blue.png" >
       <img crossorigin="anonymous" id="drag_img3" draggable="true" src="http://harbhub.github.io/Useful/images/mail_orange.png" >
@@ -151,7 +152,9 @@
         var image = new Image();
         image.src = canvas.toDataURL("image/png");
         document.body.appendChild(image);
-        
+        canvas.toBlob(function(blob) {
+            saveAs(blob, "Incident_Report_Image.png");
+        });
         clear_all();
     });
     
