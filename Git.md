@@ -42,3 +42,11 @@ navigate (or refresh) the browser to your forked copy of the repository
 make sure that the changes you made are displaying as expected
 
 click on the Make a pull request link and follow the instructions
+
+**Log In**
+
+git config --global user.email foo@bar.org
+
+git config --global user.name some_name
+
+and to check that you did it correctly use >> git config --global --list
