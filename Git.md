@@ -50,3 +50,34 @@ git config --global user.email foo@bar.org
 git config --global user.name some_name
 
 and to check that you did it correctly use >> git config --global --list
+
+**Bit Bucket Repository**
+
+make a directory for the new repository
+
+mkdir your_repo
+
+move into the new folder
+
+cd your_repo
+
+initialize an empty git repository
+
+git init
+
+set the remote origin to the Bit Bucket repository location
+
+git remote add origin ssh://git@bitbucket.org/username_or_teamname/repository_name.git
+
+add some files to the repository
+
+git add filename.ext
+git add other_filename.ext
+
+commit the changes with a message
+
+git commit -m "Your message"
+
+push the changes to the Bit Bucket repository
+
+git push -u origin master
