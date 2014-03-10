@@ -24,6 +24,8 @@ CREATE TABLE table_name (column_1 varchar(200), column_2 varchar(43))
 
 ALTER TABLE table_name ADD column_name varchar(131) NULL
 
-#Show Table (Perform this on an existing table in order to see the SQL statement that creates that table)
+#Show Table
+
+(Perform this on an existing table in order to see the SQL statement that creates that table)
 
 SHOW CREATE TABLE table_name
