@@ -18,6 +18,8 @@ INSERT INTO table_name (username, email, age) VALUES (bobby, abc@gmail.com, 22)
 
 #Stored Procedure (Calling a Stored Procedure)
 
+(Todo)
+
 #Create Table
 
 CREATE TABLE table_name
