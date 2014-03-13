@@ -4,17 +4,17 @@ SELECT * FROM table_name
 
 SELECT id, username, email, age FROM table_name
 
-SELECT * FROM table_name WHERE age = 40
+SELECT * FROM table_name WHERE age = '40'
 
-SELECT username, email FROM table_name WHERE age = 25 ORDER BY username DESC
+SELECT username, email FROM table_name WHERE age = '25' ORDER BY username DESC
 
 #Update
 
-UPDATE table_name SET age = 20, username = johnny WHERE id = 1513
+UPDATE table_name SET age = '20', username = 'johnny' WHERE id = '1513'
 
 #Insert
 
-INSERT INTO table_name (username, email, age) VALUES (bobby, abc@gmail.com, 22)
+INSERT INTO table_name (username, email, age) VALUES ('bobby', 'abc@gmail.com', '22')
 
 #Stored Procedure (Calling a Stored Procedure)
 
