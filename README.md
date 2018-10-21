@@ -16,3 +16,6 @@ Demo
 ====
 
 [Demo] (http://harbhub.github.io/Useful/)
+
+List all of the working directories of the currently running processes:
+lsof -d cwd
