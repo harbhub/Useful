@@ -12,6 +12,9 @@ ps -ef | grep node
 How to kill a process by id on a server:
 kill <id>
 
+How to set a terminal/console session to use global node modules:
+export NODE_PATH=/usr/local/lib/node_modules
+
 Demo
 ====
 
